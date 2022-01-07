@@ -1,5 +1,8 @@
 name: Getting changed packages
-on: push
+on:
+    pull_request:
+        branches:
+            - master
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
@@ -14,3 +17,6 @@ jobs:
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
             - run: echo "$GITHUB_REF ${{ github.ref }}"
+            - run: echo "${{ github.action }} ${{ github.action_path }}"
+            - run: echo "${{ github.actor }} ${{ github.base_ref }}"
+            - run: echo "${{ github.event }} ${{ github.event_name }} ${{ github.event_path }}"

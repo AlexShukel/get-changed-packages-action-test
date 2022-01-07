@@ -9,6 +9,7 @@
     "author": "Aleksandras Šukelovič",
     "license": "ISC",
     "workspaces": [
-        "my_packages/**"
+        "my_packages/a",
+        "my_packages/b"
     ]
 }

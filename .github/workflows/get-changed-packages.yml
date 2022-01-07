@@ -13,7 +13,7 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-packages-action@create-action-output
+            - uses: alexshukel/get-changed-workspaces-action@main
               id: testing_action
               with:
                   workspaces: '["my_packages/a", "src/**"]'

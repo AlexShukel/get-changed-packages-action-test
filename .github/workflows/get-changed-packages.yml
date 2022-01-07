@@ -13,7 +13,7 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-workspaces-action@use-map-workspaces
+            - uses: alexshukel/get-changed-workspaces-action@main
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
             - run: echo "$GITHUB_REF ${{ github.ref }}"

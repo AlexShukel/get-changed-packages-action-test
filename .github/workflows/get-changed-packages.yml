@@ -11,6 +11,6 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-packages-action@main
+            - uses: alexshukel/get-changed-packages-action@get-workspaces-from-input
               with:
-                  workspaces: '["./packages/**"]'
+                  workspaces: '["./packages/**", "./tools/**"]'

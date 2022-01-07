@@ -8,9 +8,7 @@
     "keywords": [],
     "author": "Aleksandras Šukelovič",
     "license": "ISC",
-    "workspaces": {
-        "packages": [
-            "src/**"
-        ]
-    }
+    "workspaces": [
+        "packages/a"
+    ]
 }

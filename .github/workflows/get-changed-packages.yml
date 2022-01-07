@@ -6,11 +6,19 @@ on:
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
+        outputs:
+            workspaces: ${{ steps.testing_action.outputs.changed_workspaces }}
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-packages-action@getting-changed-workspaces
+            - uses: alexshukel/get-changed-packages-action@create-action-output
+              id: testing_action
               with:
                   workspaces: '["my_packages/a", "src/**"]'
+    another-job:
+        runs-on: ubuntu-latest
+        needs: [changed-packages]
+        steps:
+            - run: echo "${{ needs.changed-packages.outputs.workspaces }}"

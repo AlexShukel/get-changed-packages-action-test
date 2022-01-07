@@ -1,8 +1,5 @@
 name: Getting changed packages
-on:
-    pull_request:
-        branches:
-            - master
+on: push
 jobs:
     changed-packages:
         runs-on: ubuntu-latest

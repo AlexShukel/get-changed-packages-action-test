@@ -13,4 +13,4 @@ jobs:
                   node-version: "14"
             - uses: alexshukel/get-changed-packages-action@get-workspaces-from-input
               with:
-                  workspaces: '["./packages/**", "./tools/**"]'
+                  workspaces: "[./packages/**, ./tools/**]"

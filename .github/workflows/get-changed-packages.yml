@@ -12,3 +12,5 @@ jobs:
               with:
                   node-version: "14"
             - uses: alexshukel/get-changed-packages-action@getting-changed-workspaces
+              with:
+                  workspaces: '["my_packages/a", "src/**"]'

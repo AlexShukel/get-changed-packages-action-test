@@ -13,10 +13,10 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-workspaces-action@main
+            - uses: alexshukel/get-changed-workspaces-action@use-git-root-directory
               id: testing_action
-            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
-            - run: echo "$GITHUB_REF ${{ github.ref }}"
-            - run: echo "${{ github.action }} ${{ github.action_path }}"
-            - run: echo "${{ github.actor }} ${{ github.base_ref }}"
-            - run: echo "${{ github.event }} ${{ github.event_name }} ${{ github.event_path }}"
+#            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
+#            - run: echo "$GITHUB_REF ${{ github.ref }}"
+#            - run: echo "${{ github.action }} ${{ github.action_path }}"
+#            - run: echo "${{ github.actor }} ${{ github.base_ref }}"
+#            - run: echo "${{ github.event }} ${{ github.event_name }} ${{ github.event_path }}"

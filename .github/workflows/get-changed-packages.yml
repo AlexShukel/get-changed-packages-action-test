@@ -8,7 +8,6 @@ jobs:
             - uses: alexshukel/get-changed-workspaces-action@main
               with:
                   package-path: app
-                  base-ref: master
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.names }}"
             - run: echo "${{ steps.testing_action.outputs.paths }}"

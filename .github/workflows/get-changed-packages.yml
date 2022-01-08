@@ -10,7 +10,7 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-workspaces-action@handle-push-action
+            - uses: alexshukel/get-changed-workspaces-action@main
               with:
                   package-path: app
                   base-ref: master

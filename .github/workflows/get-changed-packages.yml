@@ -15,8 +15,3 @@ jobs:
                   package-path: app
                   base-ref: origin/master
               id: testing_action
-            #            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
-            - run: echo "Github ref is ${{ github.ref }}"
-#            - run: echo "${{ github.action }} ${{ github.action_path }}"
-#            - run: echo "${{ github.actor }} ${{ github.base_ref }}"
-#            - run: echo "${{ github.event }} ${{ github.event_name }} ${{ github.event_path }}"

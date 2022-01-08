@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: alexshukel/get-changed-workspaces-action@change-action-output
+            - uses: alexshukel/get-changed-workspaces-action@main
               with:
                   package-path: app
                   base-ref: master

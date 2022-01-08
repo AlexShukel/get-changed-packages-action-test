@@ -13,5 +13,4 @@ jobs:
             - uses: alexshukel/get-changed-workspaces-action@handle-push-action
               with:
                   package-path: app
-                  base-ref: origin/master
               id: testing_action

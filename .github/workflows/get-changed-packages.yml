@@ -13,6 +13,5 @@ jobs:
             - uses: alexshukel/get-changed-workspaces-action@handle-push-action
               with:
                   package-path: app
-                  base-ref: master
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"

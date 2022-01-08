@@ -1,18 +1,20 @@
 name: Getting changed packages
-on: [pull_request, push]
+on: [pull_request]
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
         outputs:
-            workspaces: ${{ steps.testing_action.outputs.changed_workspaces }}
+            names: ${{ steps.testing_action.outputs.changed-packages-names }}
+            paths: ${{ steps.testing_action.outputs.changed-packages-paths }}
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-workspaces-action@main
+            - uses: alexshukel/get-changed-workspaces-action@change-action-output
               with:
                   package-path: app
                   base-ref: master
               id: testing_action
-            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
+            - run: echo "${{ steps.testing_action.outputs.names }}"
+            - run: echo "${{ steps.testing_action.outputs.paths }}"

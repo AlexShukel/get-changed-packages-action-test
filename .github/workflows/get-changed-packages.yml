@@ -14,6 +14,8 @@ jobs:
               with:
                   node-version: "14"
             - uses: alexshukel/get-changed-workspaces-action@use-git-root-directory
+              with:
+                  package-path: app
               id: testing_action
 #            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"
 #            - run: echo "$GITHUB_REF ${{ github.ref }}"

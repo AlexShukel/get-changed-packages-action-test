@@ -1,5 +1,5 @@
 name: Getting changed packages
-on: [pull_request]
+on: [push]
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
@@ -10,5 +10,5 @@ jobs:
                   package-path: app
                   base-ref: master
               id: testing_action
-            - run: echo "${{ steps.testing_action.outputs.changed-packages-names }}"
-            - run: echo "${{ steps.testing_action.outputs.changed-packages-paths }}"
+            - run: echo "${{ steps.testing_action.outputs.names }}"
+            - run: echo "${{ steps.testing_action.outputs.paths }}"

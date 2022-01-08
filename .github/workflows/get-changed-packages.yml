@@ -1,14 +1,18 @@
 name: Getting changed packages
-on:
-    pull_request:
-        branches:
-            - master
+on: [pull_request, push]
 jobs:
-    coverage:
+    changed-packages:
         runs-on: ubuntu-latest
+        outputs:
+            workspaces: ${{ steps.testing_action.outputs.changed_workspaces }}
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
               with:
                   node-version: "14"
-            - uses: alexshukel/get-changed-packages-action@main
+            - uses: alexshukel/get-changed-workspaces-action@main
+              with:
+                  package-path: app
+                  base-ref: master
+              id: testing_action
+            - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"

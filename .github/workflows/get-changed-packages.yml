@@ -1,5 +1,5 @@
 name: Getting changed packages
-on: [pull_request, push]
+on: [push]
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
@@ -13,6 +13,6 @@ jobs:
             - uses: alexshukel/get-changed-workspaces-action@main
               with:
                   package-path: app
-                  base-ref: master
+                  base-ref: hello
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.changed_workspaces }}"

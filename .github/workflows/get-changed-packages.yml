@@ -3,9 +3,6 @@ on: [pull_request]
 jobs:
     changed-packages:
         runs-on: ubuntu-latest
-        outputs:
-            names: ${{ steps.testing_action.outputs.changed-packages-names }}
-            paths: ${{ steps.testing_action.outputs.changed-packages-paths }}
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
@@ -16,5 +13,5 @@ jobs:
                   package-path: app
                   base-ref: master
               id: testing_action
-            - run: echo "${{ steps.testing_action.outputs.names }}"
-            - run: echo "${{ steps.testing_action.outputs.paths }}"
+            - run: echo "${{ steps.testing_action.outputs.changed-packages-names }}"
+            - run: echo "${{ steps.testing_action.outputs.changed-packages-paths }}"

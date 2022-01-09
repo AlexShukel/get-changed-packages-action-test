@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: alexshukel/get-changed-workspaces-action@fix-getting-changed-packages
+            - uses: alexshukel/get-changed-workspaces-action@main
               with:
                   working-directory: app
                   base-ref: master

@@ -5,10 +5,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: alexshukel/get-changed-workspaces-action@main
+            - uses: alexshukel/get-changed-workspaces-action@fix-getting-changed-packages
               with:
-                  package-path: app
+                  working-directory: app
+                  base-ref: master
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.names }}"
             - run: echo "${{ steps.testing_action.outputs.paths }}"
-            - run: node -v

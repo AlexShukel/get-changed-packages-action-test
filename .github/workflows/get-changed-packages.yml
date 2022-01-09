@@ -11,3 +11,4 @@ jobs:
               id: testing_action
             - run: echo "${{ steps.testing_action.outputs.names }}"
             - run: echo "${{ steps.testing_action.outputs.paths }}"
+            - run: node -v

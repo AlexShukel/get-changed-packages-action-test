@@ -6,7 +6,7 @@ on:
             - example/**
         branches: [master]
 jobs:
-    changed-packages:
+    get_changed_packages:
         name: Get changed workspaces
         runs-on: ubuntu-latest
         outputs:

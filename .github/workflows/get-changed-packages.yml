@@ -13,7 +13,7 @@ jobs:
             names: ${{ steps.testing_action.outputs.names }}
         steps:
             - uses: actions/checkout@v2
-            - uses: alexshukel/get-changed-workspaces-action@V1.0.0
+            - uses: alexshukel/get-changed-workspaces-action@v1.0.0
               with:
                   working-directory: app
               id: testing_action

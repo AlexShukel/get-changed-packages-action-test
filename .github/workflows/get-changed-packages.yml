@@ -20,7 +20,7 @@ jobs:
 
             - name: Find changed packages
               id: changed_packages
-              uses: alexshukel/get-changed-workspaces-action@add-support-for-pnpm-workspaces
+              uses: alexshukel/get-changed-workspaces-action@main
 
     build:
         needs: [generate_matrix]

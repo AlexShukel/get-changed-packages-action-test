@@ -35,3 +35,14 @@ jobs:
 
         steps:
             - run: echo "${{ matrix.name }}"
+    debug:
+        needs: [generate_matrix]
+        name: Debug action
+
+        strategy:
+            matrix:
+                name: ${{ fromJson(needs.generate_matrix.outputs.names) }}
+                os: [ubuntu-latest]
+
+        steps:
+            - run: echo "${{ matrix.name }}"

@@ -21,8 +21,8 @@ jobs:
             - name: Find changed packages
               id: changed_packages
               uses: alexshukel/get-changed-workspaces-action@add-filter-option
-                with:
-                    filter: "@packages/*"
+              with:
+                  filter: "@packages/*"
 
     build:
         needs: [generate_matrix]

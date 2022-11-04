@@ -38,11 +38,11 @@ jobs:
     debug:
         needs: [generate_matrix]
         name: Debug action
+        runs-on: ubuntu-latest
 
         strategy:
             matrix:
                 name: ${{ fromJson(needs.generate_matrix.outputs.names) }}
-                os: [ubuntu-latest]
 
         steps:
             - run: echo "${{ matrix.name }}"

@@ -22,7 +22,7 @@ jobs:
               id: changed_packages
               uses: alexshukel/get-changed-workspaces-action@add-filter-option
               with:
-                  filter: "["
+                  filter: "@apps/*"
 
     build:
         needs: [generate_matrix]

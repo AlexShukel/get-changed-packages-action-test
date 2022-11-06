@@ -4,10 +4,11 @@ on:
         workflows: ["CI"]
         types:
             - completed
+        branches: [master]
 
 jobs:
     hello:
         runs-on: ubuntu-latest
         name: Hello
         steps:
-            - run: echo "Hello"
+            - run: echo "Hello world!"
